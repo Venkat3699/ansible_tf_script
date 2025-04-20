@@ -34,12 +34,20 @@ resource "aws_instance" "ansible_controller" {
   }
 
   provisioner "file" {
+    source = "./ansible/hosts.cfg"
+    destination = "/home/ubuntu/hosts.cfg"
+  }
+
+  provisioner "file" {
     source      = "./${var.pemfile}.pem"
     destination = "/home/ubuntu/${var.pemfile}.pem"
   }
 
   provisioner "remote-exec" {
-    inline = ["chmod 400 /home/ubuntu/${var.pemfile}.pem"]
+    inline = [
+      "chmod 400 /home/ubuntu/${var.pemfile}.pem"
+    ]
+
   }
   connection {
     type        = "ssh"
