@@ -34,4 +34,9 @@ terraform destroy --auto-approve
     sudo apt-get install terraform -y
 ```
 
-Ref: https://www.youtube.com/watch?v=qCeEDU2QJi4
+#### Checking Configuration
+- Connect Controller via terminals like Git Bash, Putty and Mobaxterm
+```
+    ansible all -i hosts.cfg -m shell -a "date"
+    ansible all -i hosts.cfg -m ping
+```
