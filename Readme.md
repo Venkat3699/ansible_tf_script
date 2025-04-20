@@ -9,3 +9,6 @@ terraform plan -var "pemfile=devops_mumbai" -var "servercount=2" -out ansiblelab
 terraform apply "ansiblelab"
 terraform destroy --auto-approve
 ```
+
+
+Ref: https://www.youtube.com/watch?v=qCeEDU2QJi4
