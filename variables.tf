@@ -1,5 +1,5 @@
 variable "amiid" {
-  default = "ami-0e35ddab05955cf57"
+  default = "ami-084568db4383264d4"
 }
 
 variable "type" {
@@ -7,7 +7,7 @@ variable "type" {
 }
 
 variable "pemfile" {
-  default = "devops_mumbai"
+  default = "devops_virginia"
 }
 
 variable "servercount" {

@@ -12,6 +12,15 @@ resource "local_file" "ansible_inventory" {
   filename = "./ansible/hosts.cfg"
 }
 
+resource "local_file" "ansible_config" {
+  content = <<-EOT
+    [defaults]
+    inventory = ./ansible/hosts.cfg
+    host_key_checking = False
+  EOT
+
+  filename = "./ansible/ansible.cfg"
+}
 #--------------------------------------
 # Create EC2 Ansible Controller Server
 #--------------------------------------
