@@ -5,7 +5,7 @@
 resource "local_file" "ansible_inventory" {
   content = templatefile("./templates/hosts.tpl",
     {
-      keyfile     = var.pemfile,
+      keyfile     = "${var.pemfile}.pem",
       demoservers = aws_instance.ansible_nodes.*.public_ip
     }
   )
@@ -45,7 +45,8 @@ resource "aws_instance" "ansible_controller" {
 
   provisioner "remote-exec" {
     inline = [
-      "chmod 400 /home/ubuntu/${var.pemfile}.pem"
+      "chmod 400 /home/ubuntu/${var.pemfile}.pem", 
+      "chown ubuntu:ubuntu /home/ubuntu/${var.pemfile}.pem"
     ]
 
   }

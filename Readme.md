@@ -34,6 +34,13 @@ terraform destroy --auto-approve
     sudo apt-get install terraform -y
 ```
 
+#### Ansible Installation
+```
+    sudo apt update
+    sudo apt install software-properties-common
+    sudo add-apt-repository --yes --update ppa:ansible/ansible
+    sudo apt install ansible -y
+```
 #### Checking Configuration
 - Connect Controller via terminals like Git Bash, Putty and Mobaxterm
 ```
