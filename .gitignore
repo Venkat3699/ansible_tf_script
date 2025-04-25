@@ -1,3 +1,5 @@
 # Ignore private key
 devops_mumbai.pem
 devops_virginia.pem
+.terraform/
+.terraform.lock.hcl
